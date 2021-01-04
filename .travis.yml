@@ -1,0 +1,20 @@
+language: android
+dist: trusty
+android:
+  components:
+    - build-tools-29.0.3
+    - android-29
+before_install:
+  - yes | sdkmanager "platforms;android-28" # https://travis-ci.community/t/unable-to-specify-build-tools-29-0-3-and-accept-license-sdk-29/8404
+  - yes | sdkmanager "platforms;android-29"
+  - yes | sdkmanager "build-tools;29.0.3"
+script:
+  - ./gradlew check
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache

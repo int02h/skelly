@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">skelly</string>
+    <string name="skeleton_list_description">You can add a SkeletonView at any time to make sure that they all will have synchronized animation</string>
+</resources>

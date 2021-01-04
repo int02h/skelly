@@ -1,0 +1,38 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.versions = [
+            'kotlin'    : '1.4.0',
+            'compileSdk': 30,
+            'targetSdk' : 30,
+            'minSdk'    : 16,
+    ]
+    ext.deps = [
+            'kotlinPlugin'          : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+            'androidPlugin'         : 'com.android.tools.build:gradle:4.1.0',
+            'kotlinStdlib'          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+            'appcompat'             : 'androidx.appcompat:appcompat:1.1.0',
+            'material'              : 'com.google.android.material:material:1.2.1',
+            'recyclerView'          : 'androidx.recyclerview:recyclerview:1.1.0',
+            'annotationExperimental': 'androidx.annotation:annotation-experimental:1.0.0'
+    ]
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath deps.androidPlugin
+        classpath deps.kotlinPlugin
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
