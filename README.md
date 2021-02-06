@@ -54,7 +54,7 @@ Add the following dependency to your `build.gradle` script:
 
 ```groovy
 dependencies {
-    implementation 'com.dpforge:skelly:1.0.0'
+    implementation 'com.dpforge:skelly:1.0.1'
 }
 ```
 
